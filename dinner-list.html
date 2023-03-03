@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <button id="button"></button>
+<script>
+  let root = document.getElementById('root')
+  let button = document.getElementById('button')
+  button.style.width="100px";
+  button.style.height="100px";
+
+  let dinner =["인클라인체스트프레스","케이블체스트프레스","숄더프레스","레터럴레이즈","케이블 레터럴 레이즈","딥스"]
+
+  function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+}
+button.addEventListener('click',()=>{
+  let a = getRandomInt(0,dinner.length)
+  root.innerHTML+=(dinner[a]+"</br>")
+  dinner.splice(a,1);
+  console.dir(dinner)  
+})
+
+
+
+  </script>
+</body>
+</html>
